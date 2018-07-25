@@ -1,0 +1,75 @@
+{% extends 'must/base.html' %}
+{% load static %}
+
+{% block content  %}
+<!-- <div class="container">
+    <h1>ITEMS</h1>
+    <div class="row">
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            {% for item in object_list %}
+            <div class="card mb-3">
+                <img class="card-img-top" src="{% if item.image %} {{ item.image.url }} {% else %} {% static 'must/items/default.png' %} {% endif %}" style="height: 130px; width: auto">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                </div>
+                <div class="card-footer">
+                    <p class="card-text">LOCATION: {{ item.location }}</p>
+                </div>
+            </div>
+                {% empty %}
+                <div class="alert alert-warning">No Items Yet.</div>
+            {% endfor %}
+        </div>
+        <div class="col-md-4">
+            <h2>Categories</h2>
+        </div>
+    </div>   
+</div> -->
+   <div class="container-fluid">
+      <div class="row justify-content-center" style="margin-top: 6%">
+
+        <div class="col-sm-8 blog-main">
+
+            <div class="blog-post">
+                <div class="row">
+                  {% for item in object_list %}
+                  <div class="col-sm-4">
+                    <div class="card text-center mb-3" style="width: 16rem;">
+                      
+                      <div class="card-body">
+                        <a href="{{ item.get_absolute_url }}">
+                          <img src="{% if item.image %} {{ item.image.url }} {% else %} {% static 'must/items/noimage.png' %} {% endif %}" alt="..." style="height: 130px; width: 100%">
+                        </a>
+                        <h4 class="card-title">
+                          <a href="{{ item.get_absolute_url }}">{{ item.name }}</a>
+                        </h4>
+                        <div class="card-footer">
+                            <p class="card-text"><b>Description:</b> {{ item.description }}</p>
+                            <p class="card-text"><b>LOCATION:</b> {{ item.location }}</p>
+                        </div>
+                        <!--<p class="text-warning"><b>{{ item.seller }}</b></p> -->                     
+                      </div>
+                    </div>
+                  </div>
+
+                  {% endfor %}
+                </div>
+            </div><!-- /.blog-post -->
+        </div><!-- /.blog-main -->
+
+        <div class="col-md-3 blog-sidebar">
+          <div class="sidebar-module">           
+              <h4>Categories</h4>   
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+{% endblock  %}

@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 {% load staticfiles %}
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Test</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>{% block title %}LOST&FOUND ITEMS{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'must/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'must/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'must/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'must/css/styles.css' %}">
 </head>
-
 <body>
-
-    {% block content %} 
-
-    {% endblock %}
-
-    <script src="{% static 'must/js/jquery.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'must/js/bootstrap.min.js' %}" type="text/javascript"></script>
+{% include 'must/navbar.html' %}
+ 
+{% block content %}
+ 
+{% endblock %}
+ 
+<script src="{% static 'must/js/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'must/js/bootstrap.min.js' %}" type="text/javascript"></script>
 </body>
-
 </html>

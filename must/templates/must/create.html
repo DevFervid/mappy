@@ -1,0 +1,20 @@
+{% extends 'must/base.html' %}
+{% load static %}
+
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{% block content  %}
+
+	<form method="POST" action"" enctype="multipart/form-data">
+		{% csrf_token %}
+		{% bootstrap_form form %}
+		{% buttons %}
+	    <button type="submit" class="btn btn-primary">
+	      Submit
+	    </button>
+	  {% endbuttons %}
+	</form>	
+
+{% endblock %}
